@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-color: #e3edf7;
+  --gradient-white-bg: linear-gradient(0deg, #fff 0%, #edf4fa 51%, #e5eef7 100%);
+  --gradient-color-bg: linear-gradient(180deg, rgb(13, 9, 11) 0%, rgb(179, 12, 173) 51%, rgba(99, 13, 178, 1) 100%);
+  --main-color: #e6006d;
+  --font-color: #444;
+  --hover-box-shadow: rgba(0,0,0,0.19) 0px 10px 20px, rgba(0,0,0,0.23) 0px 6px 6px;
+  --gradient-white-bg2: linear-gradient(98deg, #e5eef7 0%, #fff 100%);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
+/* Header */
+header {
+  padding: 15px 8%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--gradient-white-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  background: var(--gradient-color-bg);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Department Section */
+.department-section {
+  padding: 120px 8% 60px; /* extra top padding to avoid overlapping header */
+  background: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  background: var(--gradient-color-bg);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+.department-gallery {
+  padding: 00px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.department-card {
+  background: var(--gradient-white-bg2);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--hover-box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 15px;
+}
+
+.department-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.department-card h3 {
+  margin-top: 15px;
+  font-size: 20px;
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.department-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.department-card:hover img {
+  transform: scale(1.05);
+}
+.featured-department-card {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--gradient-white-bg2);
+  box-shadow: var(--hover-box-shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-department-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.featured-department-card h3 {
+  font-size: 28px;
+  margin: 15px 0;
+  color: var(--font-color);
+  font-weight: 700;
+}
+
+.featured-department-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.featured-department-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5%;
+  }
+
+  .logo-circle {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav li {
+    margin: 5px 0;
+  }
+
+  .department-card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .department-card h3 {
+    font-size: 16px;
+  }
+
+  .department-card img {
+    height: 160px;
+  }
+}
+.featured-department-card img {
+  height: 250px;
+}
+
+.featured-department-card h3 {
+  font-size: 20px;
+}
